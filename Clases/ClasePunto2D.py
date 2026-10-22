@@ -1,68 +1,47 @@
-import subprocess 
+from math import sqrt, pow
 
 class Punto2D:
     def __init__(self, x=0.0, y=0.0):
-        self._x = x
-        self._y = y
-        self.verificaPunto2D()
-        # print(f'Objeto {self} construido')
-
-    @property
-    def x(self):
-        return self._x
-
-    @x.setter
-    def x(self, x):
-        self._x = x
-        self.verificaPunto2D()
-
-    @property
-    def y(self):
-        return self._y
-
-    @y.setter
-    def y(self, y):
-        self._y = y
-        self.verificaPunto2D()
+        self.x = float(x)
+        self.y = float(y)
 
     def __del__(self):
         pass
-        # print(f'Objeto {self} destruido')
 
     def __str__(self):
-        return f'({self._x}, {self._y})'
-
-    def verificaPunto2D(self):
-        try:
-            self._x = float(self._x)
-        except:
-            raise TypeError('x DEBE ser numérica...')
-        finally:
-            try:
-                self._y = float(self._y)
-            except:
-                raise TypeError('y DEBE ser numérica...')
+        return f'({self.x}, {self.y})'
 
     def pideleAlUsuarioTuEstado(self):
-        self._x = input('Ingresa x ')
-        self._y = input('Ingresa y ')
-        self.verificaPunto2D()
+        self.x = float(input('Dame mi x '))
+        self.y = float(input('Dame mi y '))
 
     def muestraTuEstado(self):
         print(self)
 
     def modificaTuEstado(self, x, y):
-        self._x = x
-        self._y = y
-        self.verificaPunto2D()
+        self.x = float(x)
+        self.y = float(y)
 
-    def guardaTuEstado(self, ArchivoSalida):
-        ArchivoSalida.write(f'{self._x},{self._y}')
+    def __add__(self, Derecho):
+        S = Punto2D()
+        S.x = self.x + Derecho.x
+        S.y = self.y + Derecho.y
+        return S
 
-    def cargaTuEstado(self, ArchivoEntrada):
-        datos = ArchivoEntrada.readline().split(',')
-        self._x = float(datos[0])
-        self._y = float(datos[1])
+    def __sub__(self, Derecho):
+        S = Punto2D()
+        S.x = self.x - Derecho.x
+        S.y = self.y - Derecho.y
+        return S
 
-if __name__ == '__main__':
-    subprocess.run('cls', shell=True)
+def add(P1, P2):
+    P3 = Punto2D()
+    P3.x = P1.x + P2.x
+    P3.y = P1.y + P2.y
+    return P3
+
+def sub(P1, P2):
+    P3 = Punto2D()
+    P3.x = P1.x - P2.x
+    P3.y = P1.y - P2.y
+    return P3

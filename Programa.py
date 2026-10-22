@@ -1,53 +1,25 @@
 import subprocess
-import random
-
-def esNumérico(caracter):
-    x = ord(caracter)
-    return 48<=x and x<=57
-
-def esMayúscula(caracter):
-    x = ord(caracter)
-    return 65<=x and x<=90
-
-def esMinúscula(caracter):
-    x = ord(caracter)
-    return 97<=x and x<=122
-
-def esLetra(caracter):
-    x = ord(caracter)
-    return (65<=x and x<=90) or (97<=x and x<=122)
-
-def esCaracterEspecial(caracter):
-    x = ord(caracter)
-    return not (48<=x and x<=57) and not (65<=x and x<=90) or (97<=x and x<=122)
+import Clases.ClasePunto2D
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    for i in range(10):
-        caracter = chr(random.randrange(33, 127))
-        if esNumérico(caracter):
-            print(f'{caracter} ES numérico')
-        else:
-            print(f'{caracter} NO es numérico')
+    A = Clases.ClasePunto2D.Punto2D(1, -2)
+    B = Clases.ClasePunto2D.Punto2D(-3, 4)
 
-        if esMayúscula(caracter):
-            print(f'{caracter} ES mayúscula')
-        else:
-            print(f'{caracter} NO es mayúscula')
+    C = Clases.ClasePunto2D.add(A, B)
+    E = A+B
+    G = A.__add__(B)
+    D = Clases.ClasePunto2D.sub(A, B)
+    F = A-B
+    H = A.__sub__(B)
 
-        if esMinúscula(caracter):
-            print(f'{caracter} ES minúscula')
-        else:
-            print(f'{caracter} NO es minúscula')
-
-        if esLetra(caracter):
-            print(f'{caracter} ES letra')
-        else:
-            print(f'{caracter} NO es letra')
-
-        if esCaracterEspecial(caracter):
-            print(f'{caracter} ES caracter especial')
-        else:
-            print(f'{caracter} NO es caracter especial')
-        print()
+    print(f'{A} + {B} = {C}')
+    print(f'{A} - {B} = {D}')
+    print()
+    print(f'{A} + {B} = {E}')
+    print(f'{A} - {B} = {F}')
+    print()
+    print(f'{A} + {B} = {G}')
+    print(f'{A} - {B} = {H}')
+    print()
