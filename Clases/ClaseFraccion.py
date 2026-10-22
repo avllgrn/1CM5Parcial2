@@ -1,75 +1,72 @@
-import subprocess 
+from os import system
 
 class Fraccion:
     def __init__(self, numerador=0, denominador=1):
-        self._numerador = numerador
-        self._denominador = denominador
-        self.verificaFraccion()
-        # print(f'Objeto {self} construido')
-
-    @property
-    def numerador(self):
-        return self._numerador
-
-    @numerador.setter
-    def numerador(self, numerador):
-        self._numerador = numerador
-        self.verificaFraccion()
-
-    @property
-    def denominador(self):
-        return self._denominador
-
-    @denominador.setter
-    def denominador(self, denominador):
-        self._denominador = denominador
-        self.verificaFraccion()
-
-    def __del__(self):
-        pass
-        # print(f'Objeto {self} destruido')
+        self.numerador = int(numerador)
+        self.denominador = int(denominador)
 
     def __str__(self):
-        return f'{self._numerador}/{self._denominador}'
-
-    def verificaFraccion(self):
-        try:
-            self._numerador = int(self._numerador)
-        except:
-            raise TypeError('numerador DEBE ser entero')
-        finally:
-            try:
-                self._denominador = int(self._denominador)
-            except:
-                raise TypeError('denominador DEBE ser entero')
-            else:
-                if self._denominador < 0:
-                    self._numerador *= -1
-                    self._denominador *= -1
-
-            if self._denominador == 0:
-                raise ZeroDivisionError
+        estado = f'{self.numerador}/'
+        estado += f'{self.denominador}'
+        return estado
+    def del__(self):
+        pass
 
     def pideleAlUsuarioTuEstado(self):
-        self._numerador = input('Ingresa numerador ')
-        self._denominador = input('Ingresa denominador ')
-        self.verificaFraccion()
+        self.numerador = input('Dame mi numerador ')
+        self.denominador = input('Dame mi denominador ')
 
     def muestraTuEstado(self):
         print(self)
 
     def modificaTuEstado(self, numerador, denominador):
-        self._numerador = numerador
-        self._denominador = denominador
-        self.verificaFraccion()
+        self.numerador = numerador
+        self.denominador = denominador
 
-    def guardaTuEstado(self, ArchivoSalida):
-        ArchivoSalida.write(f'{self._numerador},{self._denominador}')
+    def __add__(self, Derecho):
+        S = Fraccion()
+        S.numerador = self.numerador*Derecho.denominador + self.denominador*Derecho.numerador
+        S.denominador = self.denominador*Derecho.denominador
+        return S
 
-    def cargaTuEstado(self, ArchivoEntrada):
-        datos = ArchivoEntrada.readline().split(',')
-        self._numerador = int(datos[0])
-        self._denominador = int(datos[1])
+    def __sub__(self, Derecho):
+        R = Fraccion()
+        R.numerador = self.numerador*Derecho.denominador - self.denominador*Derecho.numerador
+        R.denominador = self.denominador*Derecho.denominador
+        return R
 
-if __name__ == '__main__':
-    subprocess.run('cls', shell=True)
+    def __mul__(self, Derecho):
+        M = Fraccion()
+        M.numerador = self.numerador*Derecho.numerador
+        M.denominador = self.denominador*Derecho.denominador
+        return M
+
+    def __truediv__(self, Derecho):
+        D = Fraccion()
+        D.numerador = self.numerador*Derecho.denominador
+        D.denominador = self.denominador*Derecho.numerador
+        return D
+    
+def add(Izquierdo, Derecho):
+    S = Fraccion()
+    S.numerador = Izquierdo.numerador*Derecho.denominador + Izquierdo.denominador*Derecho.numerador
+    S.denominador = Izquierdo.denominador*Derecho.denominador
+    return S
+
+def sub(Izquierdo, Derecho):
+    S = Fraccion()
+    S.numerador = Izquierdo.numerador*Derecho.denominador - Izquierdo.denominador*Derecho.numerador
+    S.denominador = Izquierdo.denominador*Derecho.denominador
+    return S
+
+def mul(Izquierdo, Derecho):
+    M = Fraccion()
+    M.numerador = Izquierdo.numerador*Derecho.numerador
+    M.denominador = Izquierdo.denominador*Derecho.denominador
+    return M
+
+def truediv(Izquierdo, Derecho):
+    D = Fraccion()
+    D.numerador = Izquierdo.numerador*Derecho.denominador
+    D.denominador = Izquierdo.denominador*Derecho.numerador
+    return D
