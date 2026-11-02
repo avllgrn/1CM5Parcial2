@@ -4,32 +4,31 @@ import Clases.ClaseMonomio
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    M1 = Clases.ClaseMonomio.Monomio()
-    M2 = Clases.ClaseMonomio.Monomio(7, 8)
-    M3 = Clases.ClaseMonomio.Monomio(9)
-
-    print(f'M1 = {M1}')
-    print(f'M2 = {M2}')
-    print(f'M3 = {M3}')
-    print()
-
-    M1.modificaTuEstado(5, 6)
-    print(f'M1 = ', end='')
-    M1.muestraTuEstado()
-    print()
-
+    M1 = Clases.ClaseMonomio.Monomio(0, 0)
     print('M1')
-    M1.pideleAlUsuarioTuEstado()
+    print(M1)
+    print()
+
+    M2 = Clases.ClaseMonomio.Monomio()
+    print('(Ingresa un coeficiente cero)')
+    print('(Ingresa un exponente cero)')
     print('M2')
     M2.pideleAlUsuarioTuEstado()
+
+    M3 = Clases.ClaseMonomio.Monomio()
+    print('M3')
+    print(M3)
     print()
+    print('M3.coeficiente = 0')
+    M3.coeficiente = 0
 
-    M4 = M1+M2
-    M5 = M1-M2
-    M6 = M1*M2
-    M7 = M1/M2
-
-    print(f'M1+M2 = {M4}')
-    print(f'M1-M2 = {M5}')
-    print(f'M1*M2 = {M6}')
-    print(f'M1/M2 = {M7}')
+    M4 = Clases.ClaseMonomio.Monomio(2,3)
+    print('M4')
+    print(M4)
+    print('M4.coeficiente = 0')
+    print('M4.exponente = 0')
+    M4.coeficiente = 0
+    M4.exponente = 0
+    print('M4')
+    print(M4)
+    print()
