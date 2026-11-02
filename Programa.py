@@ -1,14 +1,25 @@
 import subprocess
-from Clases.ClaseHora import Hora
+from Clases.ClaseFecha import Fecha
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    F = Hora()
-    for hora in range(-7, 34, 10):
-        for minuto in range(-1, 80, 20):
-            for segundo in range(-1, 80, 20):
-                F.modificaTuEstado(hora, minuto, segundo)
-                print(f'hora={hora}, minuto={minuto}, segundo={segundo}\t{F}')
-            print()
-        print('\n')
+    F = Fecha()
+    print(f'Año bisiesto {F}')
+    for mes in range(14):
+        for dia in range(33):
+            F.modificaTuEstado(dia, mes, 2024)
+            print(f'dia={dia}, mes={mes}\t{F}')
+        print()
+    print()
+    subprocess.run('pause', shell=True)
+    print()
+
+    print(f'Año NO bisiesto {F}')
+    F.modificaTuEstado(1,1,2025)
+    for mes in range(14):
+        for dia in range(33):
+            F.modificaTuEstado(dia, mes, 2025)
+            print(f'dia={dia}, mes={mes}\t{F}')
+        print()
+    print()
