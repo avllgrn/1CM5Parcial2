@@ -1,64 +1,35 @@
 import subprocess
-import Clases.ClaseFraccion
+import Clases.ClaseComplejo
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    F = Clases.ClaseFraccion.Fraccion(1,-2)
-    print('F')
-    print(F)
+    C1 = Clases.ClaseComplejo.Complejo()
+    print(f'C1 = {C1}')
+    print('C1 = ',end='')
+    C1.muestraTuEstado()
     print()
 
-    print('(Ingresa un denominador negativo)')
-    print('F')
-    F.pideleAlUsuarioTuEstado()
-    print('F')
-    print(F)
+    C1.pideleAlUsuarioTuEstado()
+    print(f'C1 = {C1}')
+    print('C1 = ',end='')
+    C1.muestraTuEstado()
     print()
 
-    print('F.modificaTuEstado(5, -6)')
-    F.modificaTuEstado(5, -6)
-    print('F')
-    print(F)
+    C2 = Clases.ClaseComplejo.Complejo(1, -2)
+    print(f'C2 = {C2}')
+    print('C2 = ',end='')
+    C2.muestraTuEstado()
     print()
 
-    print('F.numerador = 7')
-    print('F.denominador = -8')
-    F.numerador = 7
-    F.denominador = -8
-    print('F')
-    print(F)
+    C3 = Clases.ClaseComplejo.Complejo(3)
+    print(f'C3 = {C3}')
+    print('C3 = ',end='')
+    C3.muestraTuEstado()
     print()
 
-    F2 = Clases.ClaseFraccion.Fraccion(-1,-2)
-    print('F2')
-    print(F2)
-    print()
-
-    print('(Ingresa un numerador negativo)')
-    print('(Ingresa un denominador negativo)')
-    print('F2')
-    F2.pideleAlUsuarioTuEstado()
-    print('F2')
-    print(F2)
-    print()
-
-    print('F2.modificaTuEstado(-5, -6)')
-    F2.modificaTuEstado(-5, -6)
-    print('F2')
-    print(F2)
-    print()
-
-    print('F2.numerador = -7')
-    print('F2.denominador = -8')
-    F2.numerador = -7
-    F2.denominador = -8
-    print('F2')
-    print(F2)
-    print()
-
-    print('F2.denominador = 0')
-    F2.denominador = 0
-    print('F2')
-    print(F2)
+    C3.modificaTuEstado(4, -5)
+    print(f'C3 = {C3}')
+    print('C3 = ',end='')
+    C3.muestraTuEstado()
     print()
