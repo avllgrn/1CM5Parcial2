@@ -1,72 +1,93 @@
 import subprocess
 
-def genero1(genero):
-    if genero == 'f':
-        return 'femenino'
-    elif genero == 'F':
-        return 'femenino'.upper()
-    elif genero == 'm':
-        return 'masculino'
-    elif genero == 'M':
-        return 'masculino'.upper()
+def estadoCivil1(estadoCivil):
+    if estadoCivil == 's':
+        return 'soltero'
+    elif estadoCivil == 'S':
+        return 'soltero'.upper()
+    elif estadoCivil == 'c':
+        return 'casado'
+    elif estadoCivil == 'C':
+        return 'casado'.upper()
+    elif estadoCivil == 'd':
+        return 'divorciado'
+    elif estadoCivil == 'D':
+        return 'divorciado'.upper()
+    elif estadoCivil == 'v':
+        return 'viudo'
+    elif estadoCivil == 'V':
+        return 'viudo'.upper()
     else:
-        return 'Género no reconocido...'
+        return 'Estado civil no reconocido...'
 
-def genero2(genero):
-    if genero == 'f' or genero == 'F':
-        return 'femenino'.capitalize()
-    elif genero == 'm' or genero == 'M':
-        return 'masculino'.capitalize()
+def estadoCivil2(estadoCivil):
+    if estadoCivil == 's' or estadoCivil == 'S':
+        return 'soltero'.capitalize()
+    elif estadoCivil == 'c' or estadoCivil == 'C':
+        return 'casado'.capitalize()
+    elif estadoCivil == 'd' or estadoCivil == 'D':
+        return 'divorciado'.capitalize()
+    elif estadoCivil == 'v' or estadoCivil == 'V':
+        return 'viudo'.capitalize()
     else:
-        return 'Género no reconocido...'
+        return 'Estado civil no reconocido...'
 
-def genero3(genero):
-    match genero:
-        case 'f':
-            return 'femenino'
-        case 'F':
-            return 'femenino'.upper()
-        case 'm':
-            return 'masculino'
-        case 'M':
-            return 'masculino'.upper()
+def estadoCivil3(estadoCivil):
+    match estadoCivil:
+        case 's':
+            return 'soltero'
+        case 'S':
+            return 'soltero'.upper()
+        case 'c':
+            return 'casado'
+        case 'C':
+            return 'casado'.upper()
+        case 'd':
+            return 'divorciado'
+        case 'D':
+            return 'divorciado'.upper()
+        case 'v':
+            return 'viudo'
+        case 'V':
+            return 'viudo'.upper()
         case _:
-            return 'Género no reconocido...'
+            return 'Estado civil no reconocido...'
 
-def genero4(genero):
-    match genero:
-        case 'f'|'F':
-            return 'femenino'.capitalize()
-        case 'm'|'M':
-            return 'masculino'.capitalize()
+def estadoCivil4(estadoCivil):
+    match estadoCivil:
+        case 's'|'S':
+            return 'soltero'.capitalize()
+        case 'c'|'C':
+            return 'casado'.capitalize()
+        case 'd'|'D':
+            return 'divorciado'.capitalize()
+        case 'v'|'V':
+            return 'viudo'.capitalize()
         case _:
-            return 'Género no reconocido...'
+            return 'Estado civil no reconocido...'
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    print('genero1(genero)\n\n')
-    for genero in ['f', 'F', 'm', 'M', 'x']:
-        print( genero, 'es', genero1(genero) )
+    print('estadoCivil1(género)\n\n')
+    for estadoCivil in ['s', 'S', 'c', 'C', 'd', 'D', 'v', 'V','x']:
+        print( estadoCivil, 'es', estadoCivil1(estadoCivil) )
     print()
     input('Presiona Enter para continuar...')
-    subprocess.run('cls', shell=True)
 
-    print('genero2(genero)\n\n')
-    for genero in ['f', 'F', 'm', 'M', 'x']:
-        print( genero, 'es', genero2(genero) )
+    print('estadoCivil2(género)\n\n')
+    for estadoCivil in ['s', 'S', 'c', 'C', 'd', 'D', 'v', 'V','x']:
+        print( estadoCivil, 'es', estadoCivil2(estadoCivil) )
     print()
     input('Presiona Enter para continuar...')
-    subprocess.run('cls', shell=True)
 
-    print('genero3(genero)\n\n')
-    for genero in ['f', 'F', 'm', 'M', 'x']:
-        print( genero, 'es', genero3(genero) )
+    print('estadoCivil3(género)\n\n')
+    for estadoCivil in ['s', 'S', 'c', 'C', 'd', 'D', 'v', 'V','x']:
+        print( estadoCivil, 'es', estadoCivil3(estadoCivil) )
     print()
     input('Presiona Enter para continuar...')
-    subprocess.run('cls', shell=True)
 
-    print('genero4(genero)\n\n')
-    for genero in ['f', 'F', 'm', 'M', 'x']:
-        print( genero, 'es', genero4(genero) )
+    print('estadoCivil4(género)\n\n')
+    for estadoCivil in ['s', 'S', 'c', 'C', 'd', 'D', 'v', 'V','x']:
+        print( estadoCivil, 'es', estadoCivil4(estadoCivil) )
     print()
