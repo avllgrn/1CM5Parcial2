@@ -1,35 +1,35 @@
 import subprocess
-import Clases.ClaseComplejo
+import Clases.ClaseMonomio
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    C1 = Clases.ClaseComplejo.Complejo()
-    C2 = Clases.ClaseComplejo.Complejo(7, 8)
-    C3 = Clases.ClaseComplejo.Complejo(9)
-
-    print(f'C1 = {C1}')
-    print(f'C2 = {C2}')
-    print(f'C3 = {C3}')
+    M1 = Clases.ClaseMonomio.Monomio()
+    print(f'M1 = {M1}')
+    print('M1 = ',end='')
+    M1.muestraTuEstado()
     print()
 
-    C1.modificaTuEstado(5, 6)
-    print(f'C1 = ', end='')
-    C1.muestraTuEstado()
+    M1.pideleAlUsuarioTuEstado()
+    print(f'M1 = {M1}')
+    print('M1 = ',end='')
+    M1.muestraTuEstado()
     print()
 
-    print('C1')
-    C1.pideleAlUsuarioTuEstado()
-    print('C2')
-    C2.pideleAlUsuarioTuEstado()
+    M2 = Clases.ClaseMonomio.Monomio(1, -2)
+    print(f'M2 = {M2}')
+    print('M2 = ',end='')
+    M2.muestraTuEstado()
     print()
 
-    C4 = C1+C2
-    C5 = C1-C2
-    C6 = C1*C2
-    C7 = C1/C2
+    M3 = Clases.ClaseMonomio.Monomio(3)
+    print(f'M3 = {M3}')
+    print('M3 = ',end='')
+    M3.muestraTuEstado()
+    print()
 
-    print(f'C1+C2 = {C4}')
-    print(f'C1-C2 = {C5}')
-    print(f'C1*C2 = {C6}')
-    print(f'C1/C2 = {C7}')
+    M3.modificaTuEstado(4, -5)
+    print(f'M3 = {M3}')
+    print('M3 = ',end='')
+    M3.muestraTuEstado()
+    print()
