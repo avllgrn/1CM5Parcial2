@@ -5,31 +5,33 @@ if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
     F1 = Clases.ClaseFraccion.Fraccion()
+    F2 = Clases.ClaseFraccion.Fraccion(7, 8)
+    F3 = Clases.ClaseFraccion.Fraccion(9)
+
     print(f'F1 = {F1}')
-    print('F1 = ',end='')
+    print(f'F2 = {F2}')
+    print(f'F3 = {F3}')
+    print()
+
+    F1.modificaTuEstado(5, 6)
+    print(f'F1 = ', end='')
     F1.muestraTuEstado()
     print()
 
-    F2 = Clases.ClaseFraccion.Fraccion(1, 2)
-    print(f'F2 = {F2}')
-    print('F2 = ',end='')
-    F2.muestraTuEstado()
-    print()
+    print('F1')
 
     F1.pideleAlUsuarioTuEstado()
-    print(f'F1 = {F1}')
-    print('F1 = ',end='')
-    F1.muestraTuEstado()
+    print('F2')
+    F2.pideleAlUsuarioTuEstado()
     print()
 
-    F3 = Clases.ClaseFraccion.Fraccion(5)
-    print(f'F3 = {F3}')
-    print('F3 = ',end='')
-    F3.muestraTuEstado()
-    print()
+    F4 = F1+F2
+    F5 = F1-F2
+    F6 = F1*F2
 
-    F3.modificaTuEstado(6, 7)
-    print(f'F3 = {F3}')
-    print('F3 = ',end='')
-    F3.muestraTuEstado()
-    print()
+    print(f'F1+F2 = {F4}')
+    print(f'F1-F2 = {F5}')
+    print(f'F1*F2 = {F6}')
+
+    F7 = F1/F2
+    print(f'F1/F2 = {F7}')
