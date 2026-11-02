@@ -1,28 +1,32 @@
 import subprocess
-import Clases.ClaseCirculo
+import Clases.ClaseRectangulo
 
 if __name__ == '__main__':
     subprocess.run('cls', shell=True)
 
-    C = Clases.ClaseCirculo.Circulo(-1)
-    print('C')
-    print(C)
+    for base in range(-1, 2):
+        for altura in range(-1, 2):
+            print(f'base={base}, altura={altura}')
+            C = Clases.ClaseRectangulo.Rectangulo(base, altura)
+            print('C')
+            print(C)
+    input('Presiona Enter para continuar...\n\n')
+    subprocess.run('cls', shell=True)
 
-    print('(Ingresa un radio negativo)')
-    print('C')
-    C.pideleAlUsuarioTuEstado()
-    print('C')
-    print(C)
-    print()
+    for base in range(-1, 2):
+        for altura in range(-1, 2):
+            print(f'base={base}, altura={altura}')
+            C.modificaTuEstado(base, altura)
+            print('C')
+            print(C)
+    input('Presiona Enter para continuar...\n\n')
+    subprocess.run('cls', shell=True)
 
-    print('C.modificaTuEstado(-1)')
-    C.modificaTuEstado(-1)
-    print('C')
-    print(C)
-    print()
-
-    print('C.radio = -1')
-    C.radio = -1
-    print('C')
-    print(C)
+    for base in range(-1, 2):
+        for altura in range(-1, 2):
+            print(f'base={base}, altura={altura}')
+            C.base = base
+            C.altura = altura
+            print('C')
+            print(C)
     print()
